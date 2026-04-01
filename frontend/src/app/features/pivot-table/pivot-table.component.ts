@@ -11,8 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { BaseChartDirective } from 'ng2-charts';
-import { ChartData, ChartConfiguration } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartData, ChartConfiguration, ChartOptions } from 'chart.js';
 import { ApiService } from '../../core/services/api.service';
 import { AggregationRequest, AggregationResult, MeasureConfig } from '../../core/models';
 import { ExportService } from '../../core/services/export.service';
@@ -31,7 +31,7 @@ interface FieldDef {
   imports: [
     CommonModule, FormsModule, MatButtonModule, MatSelectModule, MatIconModule,
     MatChipsModule, MatProgressSpinnerModule, MatTabsModule, MatInputModule,
-    MatFormFieldModule, MatTooltipModule, MatSnackBarModule, BaseChartDirective
+    MatFormFieldModule, MatTooltipModule, MatSnackBarModule, NgChartsModule
   ],
   template: `
     <div class="page-container">

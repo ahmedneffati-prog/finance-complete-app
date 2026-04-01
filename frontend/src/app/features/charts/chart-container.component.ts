@@ -8,8 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
-import { BaseChartDirective } from 'ng2-charts';
-import { ChartData, ChartConfiguration } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartData, ChartConfiguration, ChartOptions } from 'chart.js';
 import { ApiService } from '../../core/services/api.service';
 import { Trade, Stock, MarketData } from '../../core/models';
 
@@ -18,7 +18,7 @@ import { Trade, Stock, MarketData } from '../../core/models';
   standalone: true,
   imports: [
     CommonModule, FormsModule, MatButtonModule, MatSelectModule, MatFormFieldModule,
-    MatInputModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, BaseChartDirective
+    MatInputModule, MatIconModule, MatProgressSpinnerModule, MatTabsModule, NgChartsModule
   ],
   template: `
     <div class="page-container">
@@ -184,12 +184,12 @@ export class ChartContainerComponent implements OnInit {
     plugins: { legend: { position: 'top' } },
     scales: { y: { grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } }
   };
-  doughnutOptions: ChartConfiguration['options'] = {
+  doughnutOptions: ChartOptions<'doughnut'> = {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { position: 'bottom' } },
     cutout: '60%'
   };
-  pieOptions: ChartConfiguration['options'] = {
+  pieOptions: ChartOptions<'pie'> = {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { position: 'right' } }
   };

@@ -9,8 +9,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { BaseChartDirective } from 'ng2-charts';
-import { ChartData, ChartConfiguration } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartData, ChartConfiguration, ChartOptions } from 'chart.js';
 import { Subscription } from 'rxjs';
 import { WebSocketService, ConnectionStatus } from '../../core/services/websocket.service';
 import { ApiService } from '../../core/services/api.service';
@@ -37,7 +37,7 @@ interface WatchItem {
   imports: [
     CommonModule, FormsModule, MatButtonModule, MatIconModule, MatFormFieldModule,
     MatInputModule, MatChipsModule, MatBadgeModule, MatTooltipModule, MatProgressSpinnerModule,
-    BaseChartDirective
+    NgChartsModule
   ],
   template: `
     <div class="page-container">

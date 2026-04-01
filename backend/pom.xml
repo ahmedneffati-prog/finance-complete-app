@@ -77,12 +77,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JSON processing -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
         <!-- Excel export -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -106,7 +100,11 @@
             <artifactId>io</artifactId>
             <version>7.2.5</version>
         </dependency>
-
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>test</scope>
+</dependency>
         <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

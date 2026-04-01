@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink } from '@angular/router';
-import { BaseChartDirective } from 'ng2-charts';
-import { ChartConfiguration, ChartData } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
+import { ChartConfiguration, ChartData, ChartOptions } from 'chart.js';
 import { Chart, registerables } from 'chart.js';
 import { ApiService } from '../../core/services/api.service';
 import { WebSocketService } from '../../core/services/websocket.service';
@@ -20,7 +20,7 @@ Chart.register(...registerables);
   standalone: true,
   imports: [
     CommonModule, MatButtonModule, MatIconModule, MatSelectModule,
-    MatProgressSpinnerModule, RouterLink, BaseChartDirective
+    MatProgressSpinnerModule, RouterLink, NgChartsModule
   ],
   template: `
     <div class="page-container">
@@ -237,7 +237,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     labels: ['Buy', 'Sell'],
     datasets: [{ data: [0, 0], backgroundColor: ['#10b981','#ef4444'], borderWidth: 0 }]
   };
-  pieChartOptions: ChartConfiguration['options'] = {
+  pieChartOptions: ChartOptions<'doughnut'> = {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { position: 'bottom' } },
     cutout: '65%'
